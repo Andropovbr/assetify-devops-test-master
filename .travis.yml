@@ -5,7 +5,7 @@ services:
 
 before_install:
   - docker build -t movit-devops -f Dockerfile .
-  - docker run --name app movit-devops
+  - docker run -d --name app movit-devops
 
 script:
   - docker exec app python -m unittest discover
